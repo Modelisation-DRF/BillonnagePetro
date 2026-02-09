@@ -1,5 +1,5 @@
-#' Fonction prévoit la répartition par produits des arbres de 6 essences feuillus avec les équations PETRO de Havreljuk et al. (2015)
-#' ou avec les équations Petro régionalisés de Havreljuk et al. (2025).
+#' Fonction principale qui prévoit la répartition par produits des arbres de 6 essences d'arbres feuillus avec les équations Petro de Havreljuk et al. (2015)
+#' ou avec les équations Petro régionalisées de Havreljuk et al. (2025).
 #'
 #' @param Data Un dataframe qui contient en ligne les arbres dont on veut prévoir
 #'             les rendements en produit Petro.
@@ -18,9 +18,10 @@
 #'             "MSCR" pour utiliser les équations de 2015 basées sur MSCR
 #'             "DHP2015" pour utiliser les équations de 2015 basées seulement sur le DHP
 #'             "ABCD2015" pour utiliser les équations de 2015 basées sur ABCD
-#' @return Retourne un dataframe avec l'estimation du volume par classe de produit
-#'          pour chacun des arbres "ERS", "BOJ", "ERR", "BOP", "HEG", "CHR" pour Petro2015 et ERS/BOJ pour Petro2024
-#' @details Les équations régionaliées (type FHP et ABCD) ne doivent êtres appliquées que sur les régions écologiques:
+#' @return Retourne un dataframe avec l'estimation du volume par classe de produits
+#'          pour chacun des arbres ERS, BOJ, ERR, BOP, HEG, CHR pour Petro 2015 ou chacun des arbres ERS et BOJ pour Petro 2025
+#'
+#' @details Les équations régionaliées (type DHP et ABCD) ne doivent êtres appliquées que sur les régions écologiques:
 #'          "1a", "2a", "2b", "2c", "3a", "3b", "3c", "3d", "4a", "4b", "4c", "4d", "4e", "4f", "4g","4h", "DU", "SV"
 #'
 #' @examples

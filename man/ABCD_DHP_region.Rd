@@ -2,8 +2,8 @@
 % Please edit documentation in R/Billonnage_regionalise.R
 \name{ABCD_DHP_region}
 \alias{ABCD_DHP_region}
-\title{Fonction prévoit la répartition par produits des arbres ERS et BOJ à l'aide des nouvelles
-équations de Petro régionalisés issu des travaux du CFFM de Havreljuk et al. 2025.}
+\title{Fonction interne qui prévoit la répartition par produits des arbres ERS et BOJ à l'aide des nouvelles
+équations de Petro régionalisées de Havreljuk et al. (2025).}
 \usage{
 ABCD_DHP_region(data, type)
 }
@@ -28,6 +28,6 @@ Retourne un dataframe avec l'estimation du volume par classe de produit
          colonnes: TigeID, type, F1, F2, F3, F4, P, DER
 }
 \description{
-Fonction prévoit la répartition par produits des arbres ERS et BOJ à l'aide des nouvelles
-équations de Petro régionalisés issu des travaux du CFFM de Havreljuk et al. 2025.
+Fonction interne qui prévoit la répartition par produits des arbres ERS et BOJ à l'aide des nouvelles
+équations de Petro régionalisées de Havreljuk et al. (2025).
 }

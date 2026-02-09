@@ -1,5 +1,5 @@
-#' Fonction prévoit la répartition par produits des arbres de 6 essences feuillus à l'aide des
-#' équations de Petro Havreljuk et al. (2015).
+#' Fonction interne qui prévoit la répartition par produits des arbres de 6 essences d'arbres feuillus à l'aide des
+#' équations de Petro de Havreljuk et al. (2015).
 #'
 #' @param data Un dataframe qui contient en ligne les arbres dont on veut prévoir
 #'             les rendements en produit à l'aide du module de billonnage Petro 2015.

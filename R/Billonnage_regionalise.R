@@ -1,5 +1,5 @@
-#' Fonction prévoit la répartition par produits des arbres ERS et BOJ à l'aide des nouvelles
-#' équations de Petro régionalisés issu des travaux du CFFM de Havreljuk et al. 2025.
+#' Fonction interne qui prévoit la répartition par produits des arbres ERS et BOJ à l'aide des nouvelles
+#' équations de Petro régionalisées de Havreljuk et al. (2025).
 #'
 #' @param data Un dataframe qui contient en ligne les arbres dont on veut prévoir
 #'             les rendements en produit à l'aide du module de billonnage Petro
