@@ -22,7 +22,7 @@ Aucune dépendences externes
 ## Comment installer le package dans R
 ```{r eval=FALSE, echo=FALSE, message=FALSE, warning=FALSE}
 library(remotes)
-remotes::install_github("Modelisation-DRF/Billonage")
+remotes::install_github("Modelisation-DRF/BillonnagePetro")
 ```
 
 ## Historique des versions
