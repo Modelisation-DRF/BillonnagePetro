@@ -11,20 +11,23 @@ SimBillonnagePetro(Data, type)
 \item{Data}{Un dataframe qui contient en ligne les arbres dont on veut prévoir
 les rendements en produit Petro.
 Le dataframe doit contenir une colonne TigeID qui numérote individuellement chacune des lignes.
-Doit aussi contenir les colonnes Espece et DHPcm
-Pour type=DHP et type=ABCD, il faut la colonne eco ou reg_eco
-Pour type=ABCD ou ABCD2015, il faut aussi une colonne ABCD
-Pour type=MSCR, il faut aussi une colonne MSCR
-Pour type=1234, il faut aussi les colonnes prod0 et vigu0
-Les équations ne s'appliquent qu'aux arbres avec un dhp>23, les autres seront supprimés
-Les équations ne s'appliquent qu'aux espèces: "ERS", "BOJ", "ERR", "BOP", "HEG", "CHR", les autres seront supprimés}
+Doit aussi contenir les colonnes Espece et DHPcm.
+Pour type=DHP et type=ABCD, il faut la colonne eco ou reg_eco.
+Pour type=ABCD ou ABCD2015, il faut aussi une colonne ABCD.
+Pour type=MSCR, il faut aussi une colonne MSCR.
+Pour type=1234, il faut aussi les colonnes prod0 et vigu0.
+Les équations ne s'appliquent qu'aux arbres avec un dhp>23, les autres seront supprimés.
+Les équations ne s'appliquent qu'aux espèces: "ERS", "BOJ", "ERR", "BOP", "HEG", "CHR", les autres seront supprimés.}
 
-\item{type}{"DHP" pour utiliser les équations régionalisées de 2025 basées seulement sur le DHP
-"ABCD" pour utiliser les équations régionalisées de 2025 basées sur ABCD
-"1234" pour utiliser les équations de 2015 basées sur 1234
-"MSCR" pour utiliser les équations de 2015 basées sur MSCR
-"DHP2015" pour utiliser les équations de 2015 basées seulement sur le DHP
-"ABCD2015" pour utiliser les équations de 2015 basées sur ABCD}
+\item{type}{Le type d'équations à utiliser
+\itemize{
+   \item "DHP" pour utiliser les équations régionalisées de 2025 basées seulement sur le DHP
+   \item "ABCD" pour utiliser les équations régionalisées de 2025 basées sur ABCD
+   \item "1234" pour utiliser les équations de 2015 basées sur 1234
+   \item "MSCR" pour utiliser les équations de 2015 basées sur MSCR
+   \item "DHP2015" pour utiliser les équations de 2015 basées seulement sur le DHP
+   \item "ABCD2015" pour utiliser les équations de 2015 basées sur ABCD
+}}
 }
 \value{
 Retourne un dataframe avec l'estimation du volume par classe de produits
