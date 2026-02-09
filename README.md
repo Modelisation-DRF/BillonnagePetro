@@ -12,7 +12,7 @@ Un package pour estimer le volume des produits PETRO de 6 essences d'arbres feui
 
 
 ## Documentation et références
-Non disponibles pour l'instant.
+Havreljuk, F., F. Guillemette, I. Auger et S. Bédard, 2025. Modèles régionalisés de répartition des volumes de bois par classes de qualité des billes pour l’érable à sucre et le bouleau jaune. Gouvernement du Québec, ministère des Ressources naturelles et des Forêts, Direction de la recherche forestière, Note de recherche forestière no 165. 36 p. https://www.mffp.gouv.qc.ca/documents/forets/recherche/NRF165.pdf
 
 ## Dépendences
 Aucune dépendences externes
