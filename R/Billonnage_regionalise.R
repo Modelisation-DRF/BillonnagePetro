@@ -1,10 +1,10 @@
 #' Fonction prévoit la répartition par produits des arbres ERS et BOJ à l'aide des nouvelles
-#' équations de Petro régionalisés issu des travaux du CFFM de Filip Havreljuk.
+#' équations de Petro régionalisés issu des travaux du CFFM de Havreljuk et al. 2025.
 #'
 #' @param data Un dataframe qui contient en ligne les arbres dont on veut prévoir
 #'             les rendements en produit à l'aide du module de billonnage Petro
 #'             régionalisé.
-#'             Le dataframe doit contenir une colonne bilonID qui numérote individuellement chacune des lignes
+#'             Le dataframe doit contenir une colonne TigeID qui numérote individuellement chacune des lignes
 #'             et une colonne, Espece, colonne eco qui contient le groupe de régions écologiques,
 #'             une colonne DHPcm et optionnelement une colonne ABCD.
 #'             Les équations ne s'appliquent qu'aux espèces: "ERS", "BOJ", les autres seront supprimés
@@ -15,10 +15,10 @@
 #'             "DHP" pour utiliser les équations basées seulement sur le DHP
 #' @return Retourne un dataframe avec l'estimation du volume par classe de produit
 #'          pour chacun des arbres BOJ et ERS de 23 cm
-#'          colonnes: bilonID, type, F1, F2, F3, F4, P, DER
+#'          colonnes: TigeID, type, F1, F2, F3, F4, P, DER
 #'
 
-ABCD_DHP_regio<- function (data, type){
+ABCD_DHP_region<- function (data, type){
 
   select=dplyr::select
 
@@ -82,7 +82,7 @@ ABCD_DHP_regio<- function (data, type){
              Vol=exp(BetaVol+0.5*Cov),
              VolBillonM3=Pres*Vol) %>%
       mutate (Stm2ha=pi*(DHPcm/200)^2,type = "ABCD_R",ABCD = QualiteABCD ) %>%
-      select(Produit,VolBillonM3,bilonID,type) %>%
+      select(Produit,VolBillonM3,TigeID,type) %>%
       pivot_wider(names_from = Produit, values_from = VolBillonM3)
 
     if(!"F1" %in% names(sim_ABCD_DHP) ){
@@ -161,7 +161,7 @@ ABCD_DHP_regio<- function (data, type){
              Vol=exp(BetaVol+0.5*Cov),
              VolBillonM3=Pres*Vol) %>%
       mutate (Stm2ha=pi*(DHPcm/200)^2,type = "DHP_R") %>%
-      select(Produit,VolBillonM3,bilonID,type) %>%
+      select(Produit,VolBillonM3,TigeID,type) %>%
       # select(Espece, DHPcm, eco, QualiteABCD, Produit, Essence_billon,VolBillonM3 ) %>%
       pivot_wider(names_from = Produit, values_from = VolBillonM3)
 

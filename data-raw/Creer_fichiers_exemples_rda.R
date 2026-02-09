@@ -9,7 +9,7 @@ liste_arbres_ex <- data.frame(Placette=1, reg_eco="2a",
                               MSCR=c("R","R","R","M","M","M"),
                               ABCD=c("C","C","C","D","D","D")
                               )
-liste_arbres_ex <- liste_arbres_ex %>% mutate(bilonID = seq_len(nrow(liste_arbres_ex)))
+liste_arbres_ex <- liste_arbres_ex %>% mutate(TigeID = seq_len(nrow(liste_arbres_ex)))
 
 usethis::use_data(liste_arbres_ex,
                   internal=FALSE, overwrite = TRUE)

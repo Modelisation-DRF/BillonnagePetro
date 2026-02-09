@@ -1,9 +1,9 @@
 #' Fonction prévoit la répartition par produits des arbres de 6 essences feuillus à l'aide des
-#' équations de Petro 2015.
+#' équations de Petro Havreljuk et al. (2015).
 #'
 #' @param data Un dataframe qui contient en ligne les arbres dont on veut prévoir
 #'             les rendements en produit à l'aide du module de billonnage Petro 2015.
-#'             Le dataframe doit contenir une colonne bilonID qui numérote individuellement chacune des lignes.
+#'             Le dataframe doit contenir une colonne TigeID qui numérote individuellement chacune des lignes.
 #'             Doit contenir aussi les colonnes DHPcm et Espece, et optionnelement MSCR ou ABCD ou vigu0 et prod0.
 #'             Les équations ne s'appliquent qu'aux espèces: "ERS", "BOJ", "ERR", "BOP", "HEG", "CHR", les autres seront supprimés
 #'             Les équations ne s'appliquent qu'aux arbres avec un dhp>23, les autres seront supprimés
@@ -13,9 +13,9 @@
 #'             "DHP2015" pour utiliser les équations basées seulement sur le DHP
 #' @return Retourne un dataframe avec l'estimation du volume par classe de produit
 #'          pour chacun des arbres "ERS", "BOJ", "ERR", "BOP", "HEG", "CHR" de 23 cm,
-#'          colonnes: bilonID, type, F1, F2, F3, F4, P, DER
+#'          colonnes: TigeID, type, F1, F2, F3, F4, P, DER
 #'
-ABCD_DHP215<- function (data, type){
+ABCD_DHP2015<- function (data, type){
   select=dplyr::select
 
   # filtrer les dhp, et les essences
@@ -85,7 +85,7 @@ ABCD_DHP215<- function (data, type){
              Vol=exp(BetaVol+0.5*Cov),
              VolBillonM3=Pres*Vol) %>%
       mutate (Stm2ha=pi*(DHPcm/200)^2,type = "ABCD_P") %>%
-      select(Produit,VolBillonM3,bilonID,type) %>%
+      select(Produit,VolBillonM3,TigeID,type) %>%
       pivot_wider(names_from = Produit, values_from = VolBillonM3)
 
 
@@ -164,7 +164,7 @@ ABCD_DHP215<- function (data, type){
              Vol=exp(BetaVol+0.5*Cov),
              VolBillonM3=Pres*Vol) %>%
       mutate (Stm2ha=pi*(DHPcm/200)^2,type = "1234_P") %>%
-      select(Produit,VolBillonM3,bilonID,type) %>%
+      select(Produit,VolBillonM3,TigeID,type) %>%
       pivot_wider(names_from = Produit, values_from = VolBillonM3)
 
 
@@ -228,7 +228,7 @@ ABCD_DHP215<- function (data, type){
              Vol=exp(BetaVol+0.5*Cov),
              VolBillonM3=Pres*Vol)%>%
       mutate (Stm2ha=pi*(DHPcm/200)^2,type = "MSCR_P") %>%
-      select(Produit,VolBillonM3,bilonID,type) %>%
+      select(Produit,VolBillonM3,TigeID,type) %>%
       pivot_wider(names_from = Produit, values_from = VolBillonM3)
 
 
@@ -275,7 +275,7 @@ ABCD_DHP215<- function (data, type){
              Vol=exp(BetaVol+0.5*Cov),
              VolBillonM3=Pres*Vol) %>%
       mutate (Stm2ha=pi*(DHPcm/200)^2,type = "DHP_P") %>%
-      select(Produit,VolBillonM3,bilonID,type) %>%
+      select(Produit,VolBillonM3,TigeID,type) %>%
       pivot_wider(names_from = Produit, values_from = VolBillonM3)
 
   }
