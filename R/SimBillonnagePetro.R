@@ -37,7 +37,7 @@
 #'          Les équations ne s'appliquent qu'aux espèces: "ERS", "BOJ", "ERR", "BOP", "HEG", "CHR", les autres seront supprimées.
 #'
 #' @examples
-#' vol_billon <- SimBillonnagePetro(Data=liste_arbres_ex, type="ABCD")
+#' vol_petro <- SimBillonnagePetro(Data=liste_arbres_ex, type="ABCD")
 #'
 #' @export
 #'

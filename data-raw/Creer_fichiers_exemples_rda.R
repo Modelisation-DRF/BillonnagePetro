@@ -6,8 +6,8 @@ liste_arbres_ex <- data.frame(Placette=1, reg_eco="2a",
                               DHPcm=c(24,25,26,27,28,29),
                               vigu0=c("ViG","ViG","ViG","NONVIG","NONVIG","NONVIG"),
                               prod0=c("sciage","pate","sciage","pate","sciage","pate"),
-                              MSCR=c("R","R","R","M","M","M"),
-                              ABCD=c("C","C","C","D","D","D")
+                              MSCR=c("R","R","R","M","M","R"),
+                              ABCD=c("C","C","C","D","D","C")
                               )
 liste_arbres_ex <- liste_arbres_ex %>% mutate(TigeID = seq_len(nrow(liste_arbres_ex)))
 
