@@ -9,6 +9,9 @@
 #' @return Retourne un  dataframe qui contient en ligne les arbres dont on veut
 #'          prévoir les rendements en produits à l'aide de Petro régionalisé avec le
 #'          champ "eco" qui corespond à un groupement de régions écologiques
+#'
+#' @keywords internal
+#'
 ConvertisseurEco<- function (data){
 
   select=dplyr::select

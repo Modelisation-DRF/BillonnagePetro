@@ -1,5 +1,6 @@
 #' Fonction interne qui prévoit la répartition par produits des arbres de 6 essences d'arbres feuillus à l'aide des
-#' équations de Petro de Havreljuk et al. (2015).
+#' équations de Petro de
+#' Havreljuk et al. (2015).
 #'
 #' @param data Un dataframe qui contient en ligne les arbres dont on veut prévoir
 #'             les rendements en produit à l'aide du module de billonnage Petro 2015.
@@ -14,6 +15,8 @@
 #' @return Retourne un dataframe avec l'estimation du volume par classe de produit
 #'          pour chacun des arbres "ERS", "BOJ", "ERR", "BOP", "HEG", "CHR" de 23 cm,
 #'          colonnes: TigeID, type, F1, F2, F3, F4, P, DER
+#'
+#' @keywords internal
 #'
 ABCD_DHP2015<- function (data, type){
   select=dplyr::select

@@ -16,7 +16,7 @@ A data frame with 6 lignes et 9 colonnes:
   \item{prod0}{Code de produit de l'arbre}
   \item{MSCR}{Code MSCR de l'arbre}
   \item{ABCD}{Code ABCD de l'arbre}
-  \item{bilonID}{Identifiant unique de l'arbre}
+  \item{TigeID}{Identifiant unique de l'arbre}
 }
 }
 \usage{

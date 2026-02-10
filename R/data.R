@@ -13,7 +13,7 @@
 #'   \item{prod0}{Code de produit de l'arbre}
 #'   \item{MSCR}{Code MSCR de l'arbre}
 #'   \item{ABCD}{Code ABCD de l'arbre}
-#'   \item{bilonID}{Identifiant unique de l'arbre}
+#'   \item{TigeID}{Identifiant unique de l'arbre}
 #' }
 #' @examples
 #' liste_arbres_ex

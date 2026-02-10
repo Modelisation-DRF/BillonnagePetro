@@ -21,3 +21,4 @@ Retourne un  dataframe qui contient en ligne les arbres dont on veut
 Fonction qui modifie la région écologique en vue de son utilisation par
 le module de billonnage Petro régionalisé
 }
+\keyword{internal}

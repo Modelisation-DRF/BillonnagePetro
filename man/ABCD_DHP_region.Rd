@@ -31,3 +31,4 @@ Retourne un dataframe avec l'estimation du volume par classe de produit
 Fonction interne qui prévoit la répartition par produits des arbres ERS et BOJ à l'aide des nouvelles
 équations de Petro régionalisées de Havreljuk et al. (2025).
 }
+\keyword{internal}

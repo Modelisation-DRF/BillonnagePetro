@@ -17,6 +17,8 @@
 #'          pour chacun des arbres BOJ et ERS de 23 cm
 #'          colonnes: TigeID, type, F1, F2, F3, F4, P, DER
 #'
+#' @keywords internal
+#'
 
 ABCD_DHP_region<- function (data, type){
 

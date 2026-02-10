@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(Billonage)
+library(BillonnagePetro)
 
-test_check("Billonage")
+test_check("BillonnagePetro")

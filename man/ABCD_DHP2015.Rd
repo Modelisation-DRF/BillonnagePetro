@@ -3,7 +3,8 @@
 \name{ABCD_DHP2015}
 \alias{ABCD_DHP2015}
 \title{Fonction interne qui prévoit la répartition par produits des arbres de 6 essences d'arbres feuillus à l'aide des
-équations de Petro de Havreljuk et al. (2015).}
+équations de Petro de
+Havreljuk et al. (2015).}
 \usage{
 ABCD_DHP2015(data, type)
 }
@@ -27,5 +28,7 @@ Retourne un dataframe avec l'estimation du volume par classe de produit
 }
 \description{
 Fonction interne qui prévoit la répartition par produits des arbres de 6 essences d'arbres feuillus à l'aide des
-équations de Petro de Havreljuk et al. (2015).
+équations de Petro de
+Havreljuk et al. (2015).
 }
+\keyword{internal}

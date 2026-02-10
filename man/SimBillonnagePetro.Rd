@@ -2,27 +2,26 @@
 % Please edit documentation in R/SimBillonnagePetro.R
 \name{SimBillonnagePetro}
 \alias{SimBillonnagePetro}
-\title{Fonction principale qui prévoit la répartition par produits des arbres de 6 essences d'arbres feuillus avec les équations Petro de Havreljuk et al. (2015)
-ou avec les équations Petro régionalisées de Havreljuk et al. (2025).}
+\title{Fonction principale de répartition par produits des arbres de 6 essences d'arbres feuillus}
 \usage{
 SimBillonnagePetro(Data, type)
 }
 \arguments{
-\item{Data}{Un dataframe qui contient en ligne les arbres dont on veut prévoir
-les rendements en produit Petro.
-Le dataframe doit contenir une colonne TigeID qui numérote individuellement chacune des lignes.
-Doit aussi contenir les colonnes Espece et DHPcm.
-Pour type=DHP et type=ABCD, il faut la colonne eco ou reg_eco.
-Pour type=ABCD ou ABCD2015, il faut aussi une colonne ABCD.
-Pour type=MSCR, il faut aussi une colonne MSCR.
-Pour type=1234, il faut aussi les colonnes prod0 et vigu0.
-Les équations ne s'appliquent qu'aux arbres avec un dhp>23, les autres seront supprimés.
-Les équations ne s'appliquent qu'aux espèces: "ERS", "BOJ", "ERR", "BOP", "HEG", "CHR", les autres seront supprimés.}
+\item{Data}{Un dataframe qui contient en ligne les arbres dont on veut prévoir les rendements en produit Petro.
+            Le dataframe doit contenir une colonne TigeID qui numérote individuellement chacune des lignes et
+            les colonnes Espece et DHPcm.
+\itemize{
+   \item Pour type=DHP et ABCD, il faut aussi la colonne eco (regroupement de régions écologiques de Havreljuk et al. (2025) ou reg_eco.
+         Si reg_eco est fournie, elle sera convertie en regroupements.
+   \item Pour type=ABCD ou ABCD2015, il faut aussi une colonne ABCD.
+   \item Pour type=MSCR, il faut aussi une colonne MSCR.
+   \item Pour type=1234, il faut aussi les colonnes prod0 et vigu0.
+   }}
 
 \item{type}{Le type d'équations à utiliser
 \itemize{
-   \item "DHP" pour utiliser les équations régionalisées de 2025 basées seulement sur le DHP
-   \item "ABCD" pour utiliser les équations régionalisées de 2025 basées sur ABCD
+   \item "DHP" pour utiliser les équations régionalisées de 2025 basées seulement sur le DHP pour ERS et BOJ, pour les autres essences DHP2015 sera utilisé
+   \item "ABCD" pour utiliser les équations régionalisées de 2025 basées sur ABCD pour ERS et BOJ, pour les autres essences ABCD2015 sera utilisé
    \item "1234" pour utiliser les équations de 2015 basées sur 1234
    \item "MSCR" pour utiliser les équations de 2015 basées sur MSCR
    \item "DHP2015" pour utiliser les équations de 2015 basées seulement sur le DHP
@@ -30,17 +29,23 @@ Les équations ne s'appliquent qu'aux espèces: "ERS", "BOJ", "ERR", "BOP", "HEG
 }}
 }
 \value{
-Retourne un dataframe avec l'estimation du volume par classe de produits
-         pour chacun des arbres ERS, BOJ, ERR, BOP, HEG, CHR pour Petro 2015 ou chacun des arbres ERS et BOJ pour Petro 2025
+Retourne un dataframe avec l'estimation du volume (m3/tige) par classe de produits pour chacun des arbres
+ ERS, BOJ, ERR, BOP, HEG, CHR. Le data contient 6 colonnes chacune contenant le volume d'un produit: DER (déroulage),
+ F1, F2, F3, F4 et P (pâte). Le data contient aussi une colonne type qui indique le type d'équation utilisé avec le suffixe _R ou _P
+ ajouté à la fin pour indiquer l'utilisation de la version régionalisée (_R) ou de la version originale de Petro (_P).
 }
 \description{
-Fonction principale qui prévoit la répartition par produits des arbres de 6 essences d'arbres feuillus avec les équations Petro de Havreljuk et al. (2015)
-ou avec les équations Petro régionalisées de Havreljuk et al. (2025).
+Fonction principale qui prévoit la répartition par produits des arbres de 6 essences d'arbres feuillus avec les équations
+Petro de Havreljuk et al. (2015) ou avec les équations Petro régionalisées de Havreljuk et al. (2025).
 }
 \details{
 Les équations régionaliées (type DHP et ABCD) ne doivent êtres appliquées que sur les régions écologiques:
-         "1a", "2a", "2b", "2c", "3a", "3b", "3c", "3d", "4a", "4b", "4c", "4d", "4e", "4f", "4g","4h", "DU", "SV"
+         "1a", "2a", "2b", "2c", "3a", "3b", "3c", "3d", "4a", "4b", "4c", "4d", "4e", "4f", "4g","4h", "DU", "SV".
+
+         Les équations ne s'appliquent qu'aux arbres avec un dhp>23, les autres seront supprimés.
+         Les équations ne s'appliquent qu'aux espèces: "ERS", "BOJ", "ERR", "BOP", "HEG", "CHR", les autres seront supprimées.
 }
 \examples{
 vol_billon <- SimBillonnagePetro(Data=liste_arbres_ex, type="ABCD")
+
 }

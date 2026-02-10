@@ -3,7 +3,7 @@ Type: Package
 Title: Équations de billonnage PETRO
 Version: 0.1.4
 Author: c(
-    person("Junior", "Peumi", email = "junior.peumi@mrnf.gouv.qc.ca", role = c("aut", "cre")),
+    person("Junior", "Peumi", role = c("aut", "cre")),
     person("Isabelle", "Auger", email = "isabelle.auger@mrnf.gouv.qc.ca", role = c("ctb")))
 Maintainer: Isabelle Auger <isabelle.auger@mrnf.gouv.qc.ca>
 Description: Équations pour estimer le volume des produits PETRO de 6 essences de feuillus avec les équations Havreljuk et al. (2015)
